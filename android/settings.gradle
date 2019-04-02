@@ -1,0 +1,3 @@
+rootProject.name = 'JotaflixNative'
+
+include ':app'
