@@ -9,7 +9,7 @@ export function configureAxios() {
 
 export function fetchMoviesUpcoming(page = 1, language = "en-US") {
   const url = "/movie/upcoming";
-  const queryString = `language=${language}page=${page}`;
+  const queryString = `language=${language}&page=${page}`;
   const url_full = `${url}?${API_KEY}&${queryString}`;
   return axios.get(url_full);
 }

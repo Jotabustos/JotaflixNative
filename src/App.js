@@ -14,7 +14,6 @@ export default class App extends Component {
     StatusBar.setBarStyle("light-content", true);
   }
   render() {
-    console.log("STORE HERE", store.getState())
     return (
       <Provider store={store}>
         <Router>

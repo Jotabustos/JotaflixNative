@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import view from './view'
-import { getMovies } from '../../redux/upcoming/actions';
+import { getMovies, getMoviesInPage } from '../../redux/upcoming/actions';
 
 const mapStateToProps = state => ({
   movies: state.upcoming.movies,
@@ -10,5 +10,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getMovies }
+    { getMovies, getMoviesInPage }
 )(view);

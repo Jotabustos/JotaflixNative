@@ -20,6 +20,14 @@ export default function reducer(state = initialState, action = {}) {
               ...state,
               isLoading: true
             };
+        case types.UPDATE_MOVIES_IN_PAGE:
+        console.log("UPDATING MOVIES HERE", action.payload)
+        return {
+          ...state,
+          isLoading: false,
+          movies: [...state.movies, ...action.payload.movies],
+          page: action.payload.page
+        };
         default:
             return state;
     }
