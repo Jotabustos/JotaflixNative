@@ -3,9 +3,10 @@ import * as colors from "../../commons/colors";
 
 export default StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
     flex: 1,
     backgroundColor: colors.main
+  },
+  view:{
+    marginHorizontal: 20
   }
 });

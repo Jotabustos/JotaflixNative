@@ -38,7 +38,8 @@ export default class view extends Component {
   };
 
   _refreshMoviesInPage = () => {
-    this.props.getMovies(this.props.page);
+    this.props.getMovies();
+    this.setState({page:1})
   };
 
   _getNextPageMovies = () => {
@@ -67,6 +68,7 @@ export default class view extends Component {
             />
           }
           onEndReached={this._getNextPageMovies}
+          style={styles.list}
         />
       </SafeAreaView>
     );

@@ -30,10 +30,10 @@ export default class App extends Component {
               key={"Detail"}
               component={Detail}
               {...navBarStyles}
-              rightTitle={"Evaluate"}
+              rightTitle={"Review"}
               onRight={() =>
                 Actions.push("Evaluate", {
-                  title: "Evaluate",
+                  title: "Review",
                   movie: _.get(
                     store.getState(),
                     "upcoming.selectedMovie",

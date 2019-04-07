@@ -63,9 +63,10 @@ export default class view extends Component {
             keyboardType={"number-pad"}
             onChangeText={personal_rank => this.setState({ personal_rank })}
             {...textFieldStyles}
+
           />
           <TextField
-            label="Review"
+            label="Opinion"
             value={personal_review}
             multiline
             onChangeText={personal_review =>
