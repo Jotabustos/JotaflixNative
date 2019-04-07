@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, View, StatusBar } from "react-native";
+import { StatusBar } from "react-native";
 import { Stack, Router, Scene, Actions } from "react-native-router-flux";
-import { Upcoming } from "./sections";
+import { Upcoming, Detail } from "./sections";
 import { configureAxios } from "./webservices";
 import { Provider } from "react-redux";
 import { store } from "./config/redux";
@@ -25,6 +25,7 @@ export default class App extends Component {
               {...navBarStyles}
               initial
             />
+            <Scene key={"Detail"} component={Detail} {...navBarStyles} />
           </Stack>
         </Router>
       </Provider>

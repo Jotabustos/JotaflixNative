@@ -4,9 +4,8 @@ import { BASE_IMG_POSTER } from "../../config/imagePoster";
 import styles from "./styles";
 
 export default class view extends Component {
-  _onCellTapped = () => {
-    const { house } = this.props;
-    this.props.onPress(house);
+  _onCellTapped = (movie) => {
+    this.props.onPress(movie);
   };
 
   render() {
@@ -18,7 +17,7 @@ export default class view extends Component {
 
     return (
       <TouchableOpacity
-        onPress={() => this._onCellTapped()}
+        onPress={() => this._onCellTapped(movie)}
         style={styles.cell}
       >
         <Image source={source} style={styles.image} />

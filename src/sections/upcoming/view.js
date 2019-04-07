@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Text, SafeAreaView, FlatList, RefreshControl } from "react-native";
+import { Actions } from "react-native-router-flux";
 import styles from "./styles";
 import { MovieCell } from "../../widgets";
 import * as colors from "../../commons/colors";
@@ -18,14 +19,14 @@ export default class view extends Component {
     this.props.getMovies();
   }
 
-  _onPress = house => {
-    console.log("House pressed");
+  _onPress = movie => {
+    console.log("Movieeee here", movie)
+    Actions.Detail({movie})
   };
 
   _keyExtractor = (item, index) => `${item.id}`;
 
   _renderItem = ({ item, index }) => (
-    // onPress={this._onHouseTapped}
     <MovieCell movie={item} onPress={this._onPress} />
   );
 

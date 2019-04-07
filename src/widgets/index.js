@@ -1,3 +1,4 @@
 import MovieCell from './MovieCell'
+import EvaluateButton from './EvaluateButton'
 
-export {MovieCell}
+export {MovieCell, EvaluateButton}
