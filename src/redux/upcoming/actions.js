@@ -41,6 +41,13 @@ export const getMoviesInPage = (page = 2) => dispatch => {
         }))
 }
 
+export const setSelectedMovie = (movie) => dispatch => {
+    dispatch({
+        type: types.SET_SELECTED_MOVIE,
+        payload: movie
+    })
+}
+
 const setMoviesLoading = () => {
     return {
         type: types.MOVIES_LOADING

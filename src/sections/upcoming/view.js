@@ -20,7 +20,7 @@ export default class view extends Component {
   }
 
   _onPress = movie => {
-    console.log("Movieeee here", movie)
+    this.props.setSelectedMovie(movie)
     Actions.Detail({movie})
   };
 
@@ -49,7 +49,6 @@ export default class view extends Component {
 
   render() {
     const { movies, isLoading } = this.props;
-    console.log("MOVIES HERE", movies);
     return (
       <SafeAreaView style={styles.container}>
         <FlatList

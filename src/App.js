@@ -6,6 +6,7 @@ import { configureAxios } from "./webservices";
 import { Provider } from "react-redux";
 import { store } from "./config/redux";
 import * as colors from "./commons/colors";
+import _ from "lodash";
 
 export default class App extends Component {
   constructor(props) {
@@ -30,7 +31,16 @@ export default class App extends Component {
               component={Detail}
               {...navBarStyles}
               rightTitle={"Evaluate"}
-              onRight={() => Actions.Evaluate()}
+              onRight={() =>
+                Actions.push("Evaluate", {
+                  title: "Evaluate",
+                  movie: _.get(
+                    store.getState(),
+                    "upcoming.selectedMovie",
+                    {}
+                  )
+                })
+              }
               rightButtonTextStyle={{ color: colors.white }}
             />
             <Scene
