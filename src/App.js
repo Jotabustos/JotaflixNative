@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StatusBar } from "react-native";
 import { Stack, Router, Scene, Actions } from "react-native-router-flux";
-import { Upcoming, Detail } from "./sections";
+import { Upcoming, Detail, Evaluate } from "./sections";
 import { configureAxios } from "./webservices";
 import { Provider } from "react-redux";
 import { store } from "./config/redux";
@@ -25,7 +25,19 @@ export default class App extends Component {
               {...navBarStyles}
               initial
             />
-            <Scene key={"Detail"} component={Detail} {...navBarStyles} />
+            <Scene
+              key={"Detail"}
+              component={Detail}
+              {...navBarStyles}
+              rightTitle={"Evaluate"}
+              onRight={() => Actions.Evaluate()}
+              rightButtonTextStyle={{ color: colors.white }}
+            />
+            <Scene
+              key={"Evaluate"}
+              component={Evaluate}
+              {...navBarStyles}
+            />
           </Stack>
         </Router>
       </Provider>

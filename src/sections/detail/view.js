@@ -3,7 +3,6 @@ import { View, Image, Text, SafeAreaView } from "react-native";
 import styles from "./styles";
 import _ from "lodash";
 import { BASE_IMG_POSTER } from "../../config/imagePoster";
-import { EvaluateButton } from "../../widgets";
 
 export default class view extends Component {
   render() {
@@ -31,7 +30,6 @@ export default class view extends Component {
             <Text style={styles.overviewValue}>{movie.overview}</Text>
           </View>
         </View>
-        <EvaluateButton />
       </SafeAreaView>
     );
   }
