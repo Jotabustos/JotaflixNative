@@ -56,7 +56,7 @@ export default class view extends Component {
     const { personal_review, personal_rank } = this.state;
     return (
       <SafeAreaView style={styles.container}>
-        <View>
+        <View style={styles.view}>
           <TextField
             label="Ranking"
             value={personal_rank}
@@ -76,7 +76,7 @@ export default class view extends Component {
           <Button
             onPress={this._onPress}
             title="Confirm"
-            color={colors.navBar}
+            color={colors.red}
           />
         </View>
       </SafeAreaView>
@@ -85,5 +85,7 @@ export default class view extends Component {
 }
 
 const textFieldStyles = {
-  tintColor: colors.black
+  tintColor: colors.red,
+  baseColor: colors.white,
+  textColor: colors.white
 };

@@ -10,7 +10,7 @@ export default StyleSheet.create({
     width: "100%",
     height: 300,
     resizeMode: "contain",
-    backgroundColor: colors.navBar,
+    backgroundColor: colors.main,
     marginBottom: 20
   },
   title: {
@@ -35,7 +35,12 @@ export default StyleSheet.create({
     fontSize: 16,
     color: colors.white,
     flex: 1,
-    textAlign: 'left'
+    textAlign: "left"
+  },
+  overviewLabel: {
+    fontSize: 18,
+    color: colors.grey,
+    marginBottom: 10
   },
   value: {
     fontSize: 16,
@@ -45,6 +50,6 @@ export default StyleSheet.create({
   },
   label: {
     fontSize: 14,
-    color: colors.white
+    color: colors.grey
   }
 });
