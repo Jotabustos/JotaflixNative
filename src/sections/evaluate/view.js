@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import {
-  SafeAreaView,
-  View,
-  TouchableOpacity,
-  Text,
-  TextInput
-} from "react-native";
+import { SafeAreaView, View, Button } from "react-native";
+
+import { TextField } from "react-native-material-textfield";
 import styles from "./styles";
+import * as colors from '../../commons/colors'
+import {Actions} from 'react-native-router-flux'
 
 export default class view extends Component {
   constructor(props) {
@@ -17,34 +15,44 @@ export default class view extends Component {
     };
   }
 
-  _onSubmit = () => {
-    console.log("as");
+  _onPress = () => {
+      Actions.pop();
   };
+
   render() {
+      const { personal_review, personal_rank } = this.state;
     return (
       <SafeAreaView style={styles.container}>
-        <View style={{ flex: 1 }}>
-          <TextInput
-            label={"Review"}
-            value={this.state.personal_review}
-            onChangeText={text => this.setState({ personal_review: text })}
-            placeholder={"Review"}
+        <View>
+          <TextField
+            label="Review"
+            value={personal_review}
+            multiline
+            onChangeText={personal_review =>
+              this.setState({ personal_review })
+            }
+            {...textFieldStyles}
           />
-
-          <TextInput
-            label={"Rank:"}
-            value={this.state.personal_rank}
-            onChangeText={personal_rank => this.setState({ personal_rank })}
+          <TextField
+            label="Rank"
+            value={personal_rank}
             keyboardType={"number-pad"}
-            placeholder={"0"}
+            onChangeText={personal_rank => this.setState({ personal_rank })}
+            {...textFieldStyles}
           />
-          <TextInput
-            style={{ height: 40, borderColor: "gray", borderWidth: 1 }}
-            onChangeText={text => this.setState({ text })}
-            value={this.state.text}
+          <Button
+            onPress={this._onPress}
+            title="Evaluate"
+            color={colors.navBar}
           />
         </View>
       </SafeAreaView>
     );
   }
+
+
 }
+
+const textFieldStyles = {
+  tintColor: colors.black,
+};
